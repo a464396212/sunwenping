@@ -1,0 +1,62 @@
+server:
+   port: 8088
+   contextPath: /group
+   topTopicLimit: 5
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 9hcom.com
+  http:
+    converters:
+      preferred-json-mapper=gson
+  freemarker:
+    prefer-file-system-access: false
+  rabbitmq:
+      host: 10.10.72.153
+      virtualHost: /teda
+      port: 5672
+      username: teda
+      password: 9hgame.com
+notification:
+  ios:
+    appkey: 55d681b567e58e3881000623
+    appMasterSecret: dvibebrqrobjlzpiruniw8l30zzljnnb
+    productionMode: false
+  android:
+    appkey: 55d681b567e58e3881000623
+    appMasterSecret: dvibebrqrobjlzpiruniw8l30zzljnnb
+    productionMode: false
+
+# DATASOURCE
+jdbc:
+    driverClass: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.10.212.230/taida_forum?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior=convertToNull
+    username: taida_user
+    password: 6WE5lBuGjf3ws9h
+jdbc_user:
+    driverClass: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.10.212.230/taida_new?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior=convertToNull
+    username: taida_user
+    password: 6WE5lBuGjf3ws9h
+# MyBatis
+
+mybatis:
+    typeAliasesPackage: com.h9
+    mapperLocations: classpath:/sqlmaps/*.xml
+    configLocation: classpath:/mybatis-config.xml
+sensitive:
+    checkUrl: http://10.10.192.139:8083/check
+userCenter:
+    getUserByTokenUrl: https://api-account.9h-sports.com/user/getbytoken?token={token}
+    addScoreUrl: http://127.0.0.1:8082/users/addscore
+    getUserByIdUrl: http://10.10.225.76:8082/users/getuserbyid/{user_id}
+    getNoticeCountByIdUrl: http://10.10.225.76:8082/users/message/system/{user_id}/noticeCount
+freemarker:
+    share_ftl: share
+
+
+
+
+
+
